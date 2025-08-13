@@ -4,9 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 }
 ?>
-<?php if ($arResult["isFormErrors"] == "Y"):?>
-    <?=$arResult["FORM_ERRORS_TEXT"];?>
-<?php endif; ?>
 <?= $arResult["FORM_NOTE"] ?? '' ?>
 <?php if ($arResult["isFormNote"] != "Y"): // isFormNote?>
     <?=$arResult["FORM_HEADER"]?>

@@ -10,7 +10,6 @@ html {
 }
 
 
-
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block
 }
@@ -155,6 +154,7 @@ button, input, optgroup, select, textarea {
     color: #172c5f;
     line-height: 1.7
 }
+
 .submit-wrapper input {
     width: 12.50001vw;
     min-width: 220px;
@@ -207,12 +207,6 @@ button, input, optgroup, select, textarea {
     border: 1px solid #eb5757
 }
 
-
-.inputtext.invalid + .input__notification {
-    opacity: 1;
-    visibility: visible
-}
-
 .input__notification {
     position: absolute;
     bottom: 0;
@@ -220,11 +214,21 @@ button, input, optgroup, select, textarea {
     font-size: 14px;
     color: #eb5757;
     transform: translateY(130%);
-    opacity: 0;
-    visibility: hidden
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    user-select: none;
+    pointer-events: none
 }
 
-@media(max-width: 1024px) {
+.input__label:focus-within .input__notification,
+.input__label:focus .input__notification {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width: 1024px) {
     .contact-form {
         padding: 40px 4vw;
     }
@@ -277,13 +281,13 @@ button, input, optgroup, select, textarea {
         margin-left: 0;
     }
 
-    .contact-form__form-inputs, 
+    .contact-form__form-inputs,
     .contact-form__bottom {
         gap: 10px;
     }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .contact-form {
         padding: 20px 4vw;
     }
@@ -343,7 +347,7 @@ button, input, optgroup, select, textarea {
     }
 }
 
-@media(min-width: 2560px) {
+@media (min-width: 2560px) {
     .contact-form {
         max-width: 1500px;
         margin: 0 auto;
